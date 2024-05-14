@@ -1,0 +1,36 @@
+{% extends 'index.html' %}
+
+{% load static %}
+
+
+{% block title %}
+    HOME 
+{% endblock %}
+
+{% block body %}
+
+    <!-- <ul>
+        {% for item in dados_hotel%}
+        <h3>{{item.descricao}}</h3>
+        <li>
+            <img src="{{item.logo.url}}" alt="Logo">
+        </li>
+        {% endfor %}
+    </ul>  -->
+
+
+    <!-- <h1>
+        HOTEL SENAI
+    </h1>
+
+    <img src="{% static 'img/senai.png' %}" alt="SENAI">
+     -->
+
+            {% for item in dados_hotel %}
+                <div class="styleHome">
+                    <h1>{{ item.titulo }}</h1>
+                    <p>{{ item.descricao }}</p>
+                </div>
+            {% endfor %}
+
+{% endblock %}
