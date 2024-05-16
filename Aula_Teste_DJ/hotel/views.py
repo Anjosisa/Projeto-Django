@@ -45,7 +45,7 @@ def nome (request):
              print(var_quarto)
              print(var_data)
              
-             return HttpResponse("<h1>Reserva realizada com sucesso</h1>")
+             return HttpResponse("<h1 style=\"font-family: 'Courier New', Courier, monospace; background-color: #f5c2dac6; text-align: center; padding: 20px; padding-top: 50px; padding-bottom: 50px\">Reserva realizada com sucesso!<br> Em breve entraremos em contato com você para mais detalhes.<br>Obrigada por escolher o Hotel Senai!</h1>")
         
     else:
         form = FormNome()
