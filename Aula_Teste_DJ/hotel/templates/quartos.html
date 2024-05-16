@@ -14,10 +14,10 @@ QUARTOS
 <div class="styleQuartos">
     <img src="{{ item.foto_quarto.url }}" class="card-img-top" alt="Logo">
 
-    <h5 class="card-title">{{ item.tipo}}</h5>
-    <p class="card-text">{{ item.descricao }}</p>
-    <p class="card-text">Disponibilidade: {{ item.disponibilidade }}</p>
-    <a href="#" class="btn" style="background-color: #ff8181b1; color: #fff;">Reservar</a>
+    <h5 class="card-title">TIPO: {{ item.tipo}}</h5>
+    <p class="card-text">DESCRIÇÃO: {{ item.descricao }}</p>
+    <p class="card-text">DISPONIBILIDADE: {{ item.disponibilidade }}</p>
+    <a href="{% url 'nome' %}" class="btn" style="background-color: #ff8181b1; color: #fff;">Reservar</a>
 </div>
 
 {% endfor %}

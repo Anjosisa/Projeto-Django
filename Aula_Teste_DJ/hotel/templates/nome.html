@@ -1,0 +1,21 @@
+{% extends 'index.html' %}
+
+{% load static %}
+
+
+{% block title %}
+
+    HOTEL SENAI - RESERVA
+    
+{% endblock %}
+
+
+{% block body %}
+
+<form action="nome" method="post" class="form">
+    {% csrf_token %}
+    {{ form.as_p }}
+    <input type="submit" value="Submit" class="submit-btn">
+</form>
+
+{% endblock %}

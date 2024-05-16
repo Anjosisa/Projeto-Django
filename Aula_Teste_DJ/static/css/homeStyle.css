@@ -2,4 +2,20 @@
 .styleHome{
     font-family: 'Courier New', Courier, monospace;
     padding: 20px;
+    padding-top: 30px;
+    text-align: center; /* Centralizando o texto */
+    margin-top: 80px; 
+
 }
+
+.styleHome h1 {
+    font-size: 36px;
+    margin-bottom: 20px;
+}
+
+/* Estilo para o parágrafo de descrição */
+.styleHome p {
+    font-size: 18px;
+    color: #000000;
+}
+
