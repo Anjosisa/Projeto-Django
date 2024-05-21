@@ -3,6 +3,8 @@ from .models import *
 from .forms import FormNome, FormCadastro, FormLogin
 from django.contrib.auth.models import User
 from django.contrib.auth import authenticate, login
+from django.conf import settings
+from django.shortcuts import redirect
 
 # Create your views here.
 
@@ -95,10 +97,11 @@ def login (request):
             print(user)
 
             if user is not None:
-                return HttpResponse("<h1 style=\"font-family: 'Courier New', Courier, monospace; background-color: #f5c2dac6; text-align: center; padding: 20px; padding-top: 50px; padding-bottom: 50px\">Reserva realizada com sucesso!<br> Em breve entraremos em contato com você para mais detalhes.<br>Obrigada por escolher o Hotel Senai!</h1>")
+                return redirect(f"{settings.LOGIN_URL}?next={request.path}")
+            return render(request, 'home.html')
 
-            else:
-                return HttpResponse("<h1 style=\"font-family: 'Courier New', Courier, monospace; background-color: #f5c2dac6; text-align: center; padding: 20px; padding-top: 50px; padding-bottom: 50px\">Usuário ou Senha incorreta</h1>")
+            # else:
+            #     return HttpResponse("<h1 style=\"font-family: 'Courier New', Courier, monospace; background-color: #f5c2dac6; text-align: center; padding: 20px; padding-top: 50px; padding-bottom: 50px\">Usuário ou Senha incorreta</h1>")
 
     else:
         form = FormLogin()
