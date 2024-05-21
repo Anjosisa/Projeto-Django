@@ -97,11 +97,10 @@ def login (request):
             print(user)
 
             if user is not None:
-                return redirect(f"{settings.LOGIN_URL}?next={request.path}")
-            return render(request, 'home.html')
-
-            # else:
-            #     return HttpResponse("<h1 style=\"font-family: 'Courier New', Courier, monospace; background-color: #f5c2dac6; text-align: center; padding: 20px; padding-top: 50px; padding-bottom: 50px\">Usuário ou Senha incorreta</h1>")
+                # return redirect(f"{settings.LOGIN_URL}?next={request.path}")
+                return redirect('home') 
+            else:
+                return HttpResponse("<h1 style=\"font-family: 'Courier New', Courier, monospace; background-color: #f5c2dac6; text-align: center; padding: 20px; padding-top: 50px; padding-bottom: 50px\">Usuário ou Senha incorreta</h1>")
 
     else:
         form = FormLogin()
